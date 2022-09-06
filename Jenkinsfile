@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Git checkout') {
             steps {
-                git 'https://github.com/tkibnyusuf/infrastructureAsCode.git'
+                git 'https://github.com/tkibnyusuf/Infrastructure_Provisioning.git'
             }
         }
         
@@ -21,7 +21,7 @@ pipeline {
                   sh "terraform init"
                   sh "terraform validate"
                   sh "terraform plan"
-                  sh " terraform destroy --auto-approve"
+                  sh " terraform apply --auto-approve"
             }
         }
                
